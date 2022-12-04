@@ -11,6 +11,14 @@ body {
   font-size: 1.25rem;
 }
 
+.invalid-form {
+  border-color: hsl(354, 100%, 66%);
+}
+
+.hidden {
+  display: none;
+}
+
 .attribution {
   position: fixed;
   width: 100vw;
