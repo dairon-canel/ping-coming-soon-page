@@ -3,83 +3,50 @@ const email = document.getElementById('mail');
 const error = email.nextElementSibling;
 
 const emailRegExp =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
-/* window.addEventListener('load', () => {
-  const isValid = email.value.length === 0 || emailRegExp.test(email.value);
-
-  if (isValid) {
-    email.classList.remove('invalid-form');
-    error.textContent = '';
-    error.classList.add('hidden');
-    return;
-  }
-
+const setError = errorString => {
   email.classList.add('invalid-form');
-  error.textContent = 'listener load';
+  error.textContent = errorString;
   error.classList.remove('hidden');
-}); */
+};
 
-window.addEventListener('load', () => {
-  function sendData() {
-    const XHR = new XMLHttpRequest();
+const setValidate = () => {
+  email.classList.remove('invalid-form');
+  error.textContent = '';
+  error.classList.add('hidden');
+};
 
-    // Bind the FormData object and the form element
-    const FD = new FormData(form);
+const validate = () => {
+  setValidate();
+  window.alert(email.value);
+  email.value = '';
+};
 
-    // Define what happens on successful data submission
-    XHR.addEventListener('load', event => {
-      alert(event.target.responseText);
-    });
-
-    // Define what happens in case of error
-    XHR.addEventListener('error', event => {
-      alert('Oops! Something went wrong.');
-    });
-
-    // Set up our request
-    XHR.open('POST', './');
-
-    // The data sent is what the user provided in the form
-    XHR.send(FD);
-  }
-
-  // Get the form element
-  const form = document.getElementById('email-form');
-
-  // Add 'submit' event handler
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-
-    sendData();
-  });
+email.addEventListener('focus', event => {
+  setValidate();
 });
 
-email.addEventListener('input', () => {
-  const isValid = email.value.length === 0 || emailRegExp.test(email.value);
-  if (isValid) {
-    email.classList.remove('invalid-form');
-    error.textContent = '';
-    error.classList.add('hidden');
-    return;
-  }
-
-  email.classList.add('invalid-form');
-  error.textContent = 'listener input';
-  error.classList.remove('hidden');
+email.addEventListener('blur', event => {
+  setValidate();
 });
 
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  const isValid = email.value.length === 0 || emailRegExp.test(email.value);
-  if (!isValid) {
-    email.classList.add('invalid-form');
-    error.textContent = 'listener submit';
-    error.classList.remove('hidden');
-  } else {
-    email.classList.remove('invalid-form');
-    error.textContent = '';
-    error.classList.add('hidden');
+  let errorMessage = '';
+
+  if (email.value.length === 0) {
+    errorMessage = 'Whoops! It looks like you forgot to add your email';
+    setError(errorMessage);
+    return;
   }
+
+  if (!emailRegExp.test(email.value)) {
+    errorMessage = 'Please provide a valid email address';
+    setError(errorMessage);
+    return;
+  }
+
+  validate();
 });

@@ -38,15 +38,18 @@
       <form
         id="email-form"
         class="order-4 mt-[1.85rem] grid w-full grid-cols-1 px-12 md:mt-[2.5rem] md:max-w-3xl md:grid-cols-[1fr_auto] md:gap-3"
+        method="get"
+        action="./"
+        novalidate
       >
         <input
-          class="h-10 rounded-full border-2 border-gray border-opacity-20 pl-8 text-xs placeholder:text-xs placeholder:text-gray placeholder:text-opacity-50 md:h-[3.4rem] md:text-lg placeholder:md:text-lg"
+          class="focus-visible::bg-lightRed h-10 rounded-full border-2 border-gray border-opacity-20 pl-8 text-xs transition-all placeholder:text-xs placeholder:text-gray placeholder:text-opacity-50 focus:border-blue focus:outline-none focus:ring-1 focus:ring-blue md:h-[3.4rem] md:text-lg placeholder:md:text-lg"
           placeholder="Your email address..."
           type="email"
           id="mail"
           name="mail"
           minlength="8"
-          novalidate
+          value=""
         />
         <span
           id="feedback"

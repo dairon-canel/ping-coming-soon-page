@@ -19,10 +19,6 @@ body {
   display: none;
 }
 
-.block {
-  display: block;
-}
-
 .attribution {
   position: fixed;
   width: 100vw;
