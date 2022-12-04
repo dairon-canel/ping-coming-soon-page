@@ -15,6 +15,8 @@
     />
 
     <title>Frontend Mentor | Ping coming soon page</title>
+
+    <script src="./index.js" defer></script>
   </head>
   <body class="grid min-h-screen">
     <main
@@ -34,22 +36,27 @@
         Subscribe and get notified
       </p>
       <form
+        id="email-form"
         class="order-4 mt-[1.85rem] grid w-full grid-cols-1 px-12 md:mt-[2.5rem] md:max-w-3xl md:grid-cols-[1fr_auto] md:gap-3"
-        action=""
       >
         <input
-          class="invalid-form h-10 rounded-full border-2 border-gray border-opacity-20 pl-8 text-xs placeholder:text-xs placeholder:text-gray placeholder:text-opacity-50 md:h-[3.4rem] md:text-lg placeholder:md:text-lg"
+          class="h-10 rounded-full border-2 border-gray border-opacity-20 pl-8 text-xs placeholder:text-xs placeholder:text-gray placeholder:text-opacity-50 md:h-[3.4rem] md:text-lg placeholder:md:text-lg"
           placeholder="Your email address..."
           type="email"
+          id="mail"
+          name="mail"
+          minlength="8"
+          novalidate
         />
-        <p
-          class="mt-1 mb-3 block text-center text-xs italic text-lightRed md:row-start-2 md:mt-0 md:mb-0 md:pl-8 md:text-start md:text-base"
+        <span
+          id="feedback"
+          class="mt-1 mb-3 hidden text-center text-xs italic text-lightRed md:row-start-2 md:mt-0 md:mb-0 md:pl-8 md:text-start md:text-base"
+          aria-live="polite"
         >
           Please provide a valid email address
-        </p>
+        </span>
         <button
           class="font-400 mt-[0.6rem] h-10 rounded-full bg-blue text-xs text-white shadow-lg drop-shadow-lg transition-all hover:opacity-80 md:mt-0 md:h-[3.4rem] md:px-16 md:text-lg"
-          type="submit"
         >
           Notify Me
         </button>

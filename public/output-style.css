@@ -637,6 +637,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-auto {
   height: auto;
 }
@@ -819,6 +823,10 @@ body {
 
 .hidden {
   display: none;
+}
+
+.block {
+  display: block;
 }
 
 .attribution {
