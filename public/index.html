@@ -17,33 +17,41 @@
     <title>Frontend Mentor | Ping coming soon page</title>
   </head>
   <body class="grid min-h-screen">
-    <main class="flex flex-col items-center place-self-start">
-      <h1 class="order-2 mt-9 text-[1.35rem] font-300 text-gray">
+    <main
+      class="flex flex-col items-center place-self-start md:justify-self-center"
+    >
+      <h1
+        class="order-2 mt-9 text-[1.35rem] font-300 text-gray md:mt-[3.8rem] md:text-5xl"
+      >
         We are launching<span class="font-700 text-veryDarkBlue"> soon!</span>
       </h1>
-      <picture class="order-1 mt-[5.25rem]"
-        ><img class="h-auto w-14" src="./logo.svg" alt="logo"
-      /></picture>
-      <p class="order-3 mt-4 text-xs">Subscribe and get notified</p>
+      <img
+        class="order-1 mt-[5.25rem] h-auto w-14 md:w-[5.38rem]"
+        src="./logo.svg"
+        alt="logo"
+      />
+      <p class="order-3 mt-4 text-xs md:mt-3 md:text-xl">
+        Subscribe and get notified
+      </p>
       <form
-        class="order-4 mt-[1.85rem] grid w-full grid-cols-1 px-12"
+        class="order-4 mt-[1.85rem] grid w-full grid-cols-1 px-12 md:mt-[2.5rem] md:max-w-3xl md:grid-cols-[1fr_auto] md:gap-3"
         action=""
       >
         <input
-          class="h-10 rounded-full border-2 border-paleBlue pb-1 placeholder:pl-8 placeholder:text-xs placeholder:text-paleBlue placeholder:text-opacity-80"
+          class="h-10 rounded-full border-2 border-paleBlue pb-1 placeholder:pl-8 placeholder:text-xs placeholder:text-paleBlue placeholder:text-opacity-80 md:h-[3.4rem] placeholder:md:text-lg"
           placeholder="Your email address..."
           type="email"
         /><button
-          class="font-400 mt-[0.6rem] h-10 rounded-full bg-blue text-xs text-white"
+          class="font-400 mt-[0.6rem] h-10 rounded-full bg-blue text-xs text-white md:mt-0 md:h-[3.4rem] md:px-16 md:text-lg"
           type="submit"
         >
           Notify Me
         </button>
       </form>
-      <picture class="order-5 mt-[4.4rem] px-[1.9rem]"
+      <picture class="order-5 mt-[4.4rem] px-[1.9rem] md:max-w-3xl"
         ><img src="./illustration-dashboard.png" alt="illustration dashboard"
       /></picture>
-      <div class="order-6 mt-[7.6rem] flex gap-5">
+      <div class="order-6 mt-[7.6rem] flex gap-5 md:mt-[3rem]">
         <img
           class="h-8 w-8 rounded-full border-2 border-gray border-opacity-20 object-center p-[0.35rem]"
           src="./facebook-f.svg"
@@ -60,7 +68,7 @@
           alt="instagram social link"
         />
       </div>
-      <p class="order-7 mt-6 text-xs text-gray text-opacity-80">
+      <p class="order-7 mt-6 text-xs text-gray text-opacity-80 md:mt-5">
         &copy; Copyright Ping. All rights reserved.
       </p>
     </main>
