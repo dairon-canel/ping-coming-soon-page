@@ -20,7 +20,7 @@
   </head>
   <body class="grid min-h-screen">
     <main
-      class="flex flex-col items-center place-self-start md:justify-self-center"
+      class="flex flex-col items-center place-self-start md:place-self-center md:justify-self-center"
     >
       <h1
         class="order-2 mt-9 text-[1.35rem] font-300 text-gray md:mt-[3.8rem] md:text-5xl"
@@ -37,7 +37,7 @@
       </p>
       <form
         id="email-form"
-        class="order-4 mt-[1.85rem] grid w-full grid-cols-1 px-12 md:mt-[2.5rem] md:max-w-3xl md:grid-cols-[1fr_auto] md:gap-3"
+        class="order-4 mt-[1.85rem] grid w-full grid-cols-1 px-12 md:mt-[2.5rem] md:grid-cols-[1fr_auto] md:gap-3 md:px-0"
         method="get"
         action="./"
         novalidate
@@ -64,7 +64,7 @@
           Notify Me
         </button>
       </form>
-      <picture class="order-5 mt-[4.4rem] px-[1.9rem] md:max-w-3xl"
+      <picture class="order-5 mt-[4.4rem] px-[1.9rem] md:max-w-xl"
         ><img src="./illustration-dashboard.png" alt="illustration dashboard"
       /></picture>
       <div class="order-6 mt-[7.6rem] flex gap-5 md:mt-[3rem]">
@@ -96,7 +96,7 @@
           />
         </svg>
       </div>
-      <p class="order-7 mt-6 text-xs text-gray text-opacity-80 md:mt-5">
+      <p class="order-7 mt-6 mb-20 text-xs text-gray text-opacity-80 md:mt-5">
         &copy; Copyright Ping. All rights reserved.
       </p>
     </main>
